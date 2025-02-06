@@ -20,7 +20,7 @@ export function createGenericStore<T>(storeName: string, service: GenericService
     state: (): GenericState<T> => ({
       items: [] as T[],
       loading: false,
-      error: null,
+      error: null ,
 
     }),
     

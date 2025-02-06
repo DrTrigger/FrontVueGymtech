@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import AlunoView from './components/AlunoView.vue';
 import ExercicioView from './components/ExercicioView.vue';
 import TipoEquipamentoView from './components/TipoEquipamentoView.vue';
 
@@ -14,7 +15,7 @@ import TipoEquipamentoView from './components/TipoEquipamentoView.vue';
   </header>
 
   <main>
-    <TipoEquipamentoView/>
+    <AlunoView/>
   </main>
 
 </template>
