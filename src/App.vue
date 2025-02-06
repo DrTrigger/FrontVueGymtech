@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+import ExercicioView from './components/ExercicioView.vue';
+import TipoEquipamentoView from './components/TipoEquipamentoView.vue';
+
 </script>
 
 <template>
@@ -13,8 +14,9 @@ import TheWelcome from './components/TheWelcome.vue'
   </header>
 
   <main>
-    <HelloWorld/>
+    <TipoEquipamentoView/>
   </main>
+
 </template>
 
 <style scoped>

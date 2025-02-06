@@ -23,3 +23,10 @@ export const editExercicio = async (id: number, exercicio: Exercicio): Promise<s
   const response = await axios.put(`${API_URL}/exercicio/editar/${id}`, exercicio);
   return response.data;
 };
+
+
+//falta implementart
+export const getExercicio = async (id: number): Promise<Exercicio> => {
+  const response = await axios.get(`${API_URL}/exercicio/${id}`); //falta implementar
+  return response.data;
+};

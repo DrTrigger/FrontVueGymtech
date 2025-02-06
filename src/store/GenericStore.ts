@@ -3,6 +3,7 @@ import { defineStore } from 'pinia';
 
 interface GenericService<T> {
   list: () => Promise<T[]>;
+  get: (id: number) => Promise<T>; // Passo 1: Adicione o método get
   create: (item: T) => Promise<any>;
   delete: (id: number) => Promise<any>;
   update: (id: number, item: T) => Promise<any>;
@@ -20,20 +21,39 @@ export function createGenericStore<T>(storeName: string, service: GenericService
       items: [] as T[],
       loading: false,
       error: null,
+
     }),
+    
     actions: {
-        async fetchItems() {
-            this.loading = true;
-            this.error = null;
-            try {
-              this.items = (await service.list()) as unknown as typeof this.items;
-            } catch (error) {
-              this.error = 'Falha ao carregar itens';
-              console.error('Erro ao buscar itens', error);
-            } finally {
-              this.loading = false;
-            }
-          }, 
+      async fetchItems() {
+        this.loading = true;
+        this.error = null;
+        try {
+          this.items = (await service.list()) as unknown as typeof this.items;
+        } catch (error) {
+          this.error = 'Falha ao carregar itens';
+          console.error('Erro ao buscar itens', error);
+        } finally {
+          this.loading = false;
+        }
+      },
+
+      // Passo 2: Adicione a ação fetchItem
+      async fetchItem(id: number) {
+        this.loading = true;
+        this.error = null;
+        try {
+          const item = await service.get(id);
+          return item;
+        } catch (error) {
+          this.error = 'Falha ao carregar item';
+          console.error('Erro ao buscar item', error);
+          throw error;
+        } finally {
+          this.loading = false;
+        }
+      },
+
       async addItem(item: T) {
         this.loading = true;
         this.error = null;
