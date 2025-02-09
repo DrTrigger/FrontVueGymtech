@@ -34,6 +34,7 @@ export function createGenericStore<T>(storeName: string, service: GenericService
           this.error = 'Falha ao carregar itens';
           console.error('Erro ao buscar itens', error);
         } finally {
+          
           this.loading = false;
         }
       },

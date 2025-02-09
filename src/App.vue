@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import AlunoView from './components/AlunoView.vue';
+import ContratoView from './components/ContratoView.vue';
 import ExercicioView from './components/ExercicioView.vue';
+import PlanoView from './components/PlanoView.vue';
+import ProfessorView from './components/ProfessorView.vue';
 import TipoEquipamentoView from './components/TipoEquipamentoView.vue';
 
 </script>
@@ -15,7 +18,7 @@ import TipoEquipamentoView from './components/TipoEquipamentoView.vue';
   </header>
 
   <main>
-    <AlunoView/>
+    <ProfessorView/>
   </main>
 
 </template>

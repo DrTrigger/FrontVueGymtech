@@ -9,5 +9,6 @@ export interface Aluno {
     data_matricula: string;
     matricula_aluno: string;
     restricao_medica: string;
+    //contratos: Contrato[];
 }
   

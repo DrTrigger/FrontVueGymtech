@@ -11,6 +11,7 @@ export const createAluno = async (aluno: Aluno): Promise<string> => {
 
 export const listAlunos = async (): Promise<Aluno[]> => {
   const response = await axios.get(`${API_URL}/aluno/listar`);
+  console.log(response.data);
   // vou criar em aluno uma list de contratos
   // vou associar diretamente aqui chamando o endpoint personalizado que vou criar no back e adicionar na lista aqui.
   return response.data;
