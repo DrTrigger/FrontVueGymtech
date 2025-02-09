@@ -23,6 +23,7 @@
           <span>{{ equip.nomeTipo }} - {{ equip.descricao }}</span>
           <button @click="edit(equip)">Editar</button>
           <button @click="remove(equip.idTipo)">Deletar</button>
+          <button @click="null">Botao</button>
         </li>
       </ul>
     </div>

@@ -26,6 +26,7 @@ export function createGenericStore<T>(storeName: string, service: GenericService
     
     actions: {
       async fetchItems() {
+        
         this.loading = true;
         this.error = null;
         try {

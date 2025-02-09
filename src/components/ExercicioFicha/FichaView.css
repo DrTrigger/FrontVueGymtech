@@ -1,0 +1,27 @@
+/* src/views/FichaView.css */
+.ficha-view {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .ficha-view form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  
+  .ficha-view form div {
+    margin-bottom: 10px;
+  }
+  
+  .ficha-view ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .ficha-view li {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  

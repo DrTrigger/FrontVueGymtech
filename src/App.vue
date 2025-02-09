@@ -5,6 +5,9 @@ import ExercicioView from './components/ExercicioView.vue';
 import PlanoView from './components/PlanoView.vue';
 import ProfessorView from './components/ProfessorView.vue';
 import TipoEquipamentoView from './components/TipoEquipamentoView.vue';
+import EquipamentoView from './components/EquipamentoView.vue';
+import ExercicioFicha from './components/ExercicioFicha.vue';
+import FichaView from './components/FichaView.vue';
 
 </script>
 
@@ -13,12 +16,12 @@ import TipoEquipamentoView from './components/TipoEquipamentoView.vue';
     <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
-  
+      <FichaView/>
     </div>
   </header>
 
   <main>
-    <ProfessorView/>
+    
   </main>
 
 </template>
