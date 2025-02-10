@@ -3,7 +3,7 @@ import axios from 'axios';
 import type { Ficha } from '../models/Ficha';
 import type { FichaResponse } from '../models/FichaResponse';
 
-const API_URL = 'http://localhost:8080'; // ajuste conforme necessário
+const API_URL = 'http://localhost:8080'; // Ajuste conforme sua configuração
 
 export const createFicha = async (ficha: Ficha): Promise<string> => {
   const response = await axios.post(`${API_URL}/ficha/cadastrar`, ficha);

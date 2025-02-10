@@ -1,13 +1,15 @@
 <script setup lang="ts">
-import AlunoView from './components/AlunoView.vue';
-import ContratoView from './components/ContratoView.vue';
-import ExercicioView from './components/ExercicioView.vue';
-import PlanoView from './components/PlanoView.vue';
-import ProfessorView from './components/ProfessorView.vue';
-import TipoEquipamentoView from './components/TipoEquipamentoView.vue';
-import EquipamentoView from './components/EquipamentoView.vue';
-import ExercicioFicha from './components/ExercicioFicha.vue';
-import FichaView from './components/FichaView.vue';
+import AlunoView from './components/../components/aluno/AlunoView.vue';
+import ExercicioView from './components/exercicio/ExercicioView.vue';
+import PlanoView from './components/plano/PlanoView.vue';
+import ProfessorView from './components/professor/ProfessorView.vue';
+import TipoEquipamentoView from './components/tipo-equipamento/TipoEquipamentoView.vue';
+import ExercicioFicha from './components/exercicio-ficha/ExercicioFichaView.vue';
+import FichaView from './components/ficha/FichaView.vue';
+import ContratoView from './components/contrato/ContratoView.vue';
+import EquipamentoView from './components/equipamento/EquipamentoView.vue';
+import ExercicioFichaView from './components/exercicio-ficha/ExercicioFichaView.vue';
+
 
 </script>
 
@@ -16,7 +18,7 @@ import FichaView from './components/FichaView.vue';
     <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
-      <FichaView/>
+      <TipoEquipamentoView/>
     </div>
   </header>
 

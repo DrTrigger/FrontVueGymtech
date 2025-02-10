@@ -1,0 +1,14 @@
+.tipo-equipamento-view {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.tipo-equipamento-view form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.tipo-equipamento-view form div {
+  margin-bottom: 10px;
+}

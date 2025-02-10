@@ -1,0 +1,15 @@
+
+.aluno-view {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.aluno-view form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.aluno-view form div {
+  margin-bottom: 10px;
+}

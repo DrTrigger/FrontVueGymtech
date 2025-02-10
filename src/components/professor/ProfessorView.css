@@ -1,0 +1,27 @@
+  .professor-view {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .professor-view form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  
+  .professor-view form div {
+    margin-bottom: 10px;
+  }
+  
+  .professor-view ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .professor-view li {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  

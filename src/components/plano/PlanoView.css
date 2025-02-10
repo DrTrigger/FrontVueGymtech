@@ -1,0 +1,14 @@
+.plano-view {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.plano-view form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.plano-view form div {
+  margin-bottom: 10px;
+}
