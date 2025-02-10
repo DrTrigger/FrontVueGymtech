@@ -1,4 +1,4 @@
-<!-- src/views/FichaView.vue -->
+  <!-- src/views/FichaView.vue -->
 <template>
   <div class="ficha-view">
     <h1>Fichas</h1>

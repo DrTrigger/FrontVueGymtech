@@ -8,7 +8,8 @@ import TipoEquipamentoView from './components/TipoEquipamentoView.vue';
 import EquipamentoView from './components/EquipamentoView.vue';
 import ExercicioFicha from './components/ExercicioFicha.vue';
 import FichaView from './components/FichaView.vue';
-
+import LifeCycle from '@/view/LifeCycle.vue';
+import Opa from '@/view/CadastrarUsuario.vue';
 </script>
 
 <template>
@@ -17,6 +18,8 @@ import FichaView from './components/FichaView.vue';
 
     <div class="wrapper">
       <FichaView/>
+      <LifeCycle/>
+      <Opa/>
     </div>
   </header>
 
