@@ -3,7 +3,7 @@ import { defineComponent, reactive, ref, onMounted } from 'vue';
 import { useFichaStore } from '../../store/FichaStore';
 import type { Ficha } from '../../models/Ficha';
 import type { FichaResponse } from '../../models/FichaResponse';
-import ExercicioView from '../ExercicioView.vue';
+// import ExercicioView from '../ExercicioView.vue';
 import { deleteExercicioFicha } from '@/services/ExercicioFichaService';
 
 export default defineComponent({

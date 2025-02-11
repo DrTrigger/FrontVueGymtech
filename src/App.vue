@@ -1,35 +1,19 @@
 <script setup lang="ts">
-import AlunoView from './components/../components/aluno/AlunoView.vue';
-import ExercicioView from './components/exercicio/ExercicioView.vue';
-import PlanoView from './components/plano/PlanoView.vue';
-import ProfessorView from './components/professor/ProfessorView.vue';
-import TipoEquipamentoView from './components/tipo-equipamento/TipoEquipamentoView.vue';
-import ExercicioFicha from './components/exercicio-ficha/ExercicioFichaView.vue';
-import FichaView from './components/ficha/FichaView.vue';
-import ContratoView from './components/contrato/ContratoView.vue';
-import EquipamentoView from './components/equipamento/EquipamentoView.vue';
-import ExercicioFichaView from './components/exercicio-ficha/ExercicioFichaView.vue';
-
+  import MainMenu from './components/menu/MainMenu.vue';
+  import { useRouter } from 'vue-router';
 
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <TipoEquipamentoView/>
-    </div>
-  </header>
-
-  <main>
-    
-  </main>
-
+  <router-view></router-view>
 </template>
 
 <style scoped>
-header {
+
+body{
+  font-family: Arial, Helvetica, sans-serif;
+}
+/* header {
   line-height: 1.5;
 }
 
@@ -54,5 +38,5 @@ header {
     place-items: flex-start;
     flex-wrap: wrap;
   }
-}
+} */
 </style>
