@@ -21,6 +21,7 @@ export default defineComponent({
       });
   
       const isEditing = ref(false);
+      const lista_alunos = ref<Aluno[]>([]);
   
       const handleSubmit = async () => {
         if (isEditing.value && form.id !== undefined) {
@@ -67,8 +68,8 @@ export default defineComponent({
         resetForm();
       };
   
-      onMounted(() => {
-        store.fetchItems();
+      onMounted(async () => {
+        await store.fetchItems();
       });
   
       return {

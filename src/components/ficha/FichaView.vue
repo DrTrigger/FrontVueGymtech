@@ -1,30 +1,37 @@
 <template>
   <!-- HTML do seu componente aqui -->
-  <div class="ficha-view">
-    <h1>Fichas</h1>
+  <div class="content-wrapper">
+    <h1>Cadastro(Ficha)</h1>
 
     <!-- Formulário para cadastrar/editar ficha -->
-    <form @submit.prevent="handleSubmit">
-      <div>
-        <label for="dataInicio">Data Início:</label>
-        <input type="datetime-local" id="dataInicio" v-model="form.dataInicio" required />
-      </div>
-      <div>
-        <label for="dataFim">Data Fim:</label>
-        <input type="datetime-local" id="dataFim" v-model="form.dataFim" required />
-      </div>
-      <div>
-        <label for="idAluno">ID Aluno:</label>
-        <input type="number" id="idAluno" v-model.number="form.idAluno" required />
-      </div>
-      <div>
-        <label for="idProfessor">ID Professor:</label>
-        <input type="number" id="idProfessor" v-model.number="form.idProfessor" required />
-      </div>
-      <button type="submit">{{ isEditing ? 'Atualizar' : 'Adicionar' }}</button>
-      <button type="button" v-if="isEditing" @click="cancelEdit">Cancelar</button>
-    </form>
-
+    <div class="form-section">
+      <form @submit.prevent="handleSubmit">
+        <div>
+          <label for="dataInicio">Data Início:</label>
+          <input type="datetime-local" id="dataInicio" v-model="form.dataInicio" required />
+        </div>
+        <div>
+          <label for="dataFim">Data Fim:</label>
+          <input type="datetime-local" id="dataFim" v-model="form.dataFim" required />
+        </div>
+        <div>
+          <label for="idAluno">Aluno:</label>
+          <select id="aluno" name="aluno">
+            <option v-for="aluno in lista_alunos" :value="aluno.nome">{{ aluno.nome }}</option>
+          </select>
+        </div>
+        <div>
+          <label for="idProfessor">Professor:</label>
+          <select id="professor" name="professor">
+            <option v-for="professor in lista_professores" :value="professor.nome">{{ professor.nome }}</option>
+          </select>
+        </div>
+        <button type="submit">{{ isEditing ? 'Atualizar' : 'Adicionar' }}</button>
+        <button type="button" v-if="isEditing" @click="cancelEdit">Cancelar</button>
+      </form>
+    </div>
+    
+    <h1>Fichas de Treino</h1>
     <!-- Lista de fichas -->
     <ul>
       <li v-for="ficha in fichas" :key="ficha.id">
@@ -58,4 +65,4 @@
 </template>
 
 <script lang="ts" src="./FichaView.ts"></script>
-<style scoped src="./FichaView.css"></style>
+<style scoped src="../../assets/global/content_style.css"></style>

@@ -1,0 +1,102 @@
+html, body{
+  margin:auto;
+  height: 150vh;
+}
+  
+body{
+  overflow-y: scroll;
+}
+:root{
+  --border-color-top-left: #daf470;
+  --border-color-right: #f07c00;
+  --border-color-bottom: #ffe600e0;
+  --border-style: solid;
+}
+  
+.content-wrapper{
+  display: flex;
+  background-color: black;
+  background-size: cover;
+  flex-direction: column;
+  margin: auto;
+  height: 150vh;
+  width: 100%;
+  align-items: center;/*Alinha os itens da flexbox horizontalmente*/
+  justify-content: start;/*Alinha os itens da flexbox verticalmente*/
+}
+  
+.form-section{
+    display: flex;
+    background-color:rgb(17, 17, 17);
+    /* float: right; */
+    width: 25%;
+    height: 70vh;
+    padding: 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 5px var(--border-style) var(--border-color-top-left);
+    border-bottom: 5px var(--border-style) var(--border-color-bottom);
+    border-right: 5px var(--border-style) var(--border-color-right);
+    
+}
+  
+.form-section label{
+  width: 100%;
+  display:flex;
+  flex-direction: column;
+}
+
+.form-section input,select{
+  width:100%;
+}
+
+/* .form-section *:not(input){
+  margin: 5px;
+} */
+
+.form section *{
+  width: 100%;
+}
+.form-section button{
+  border: 5px var(--border-style) var(--border-color-top-left);
+  border-bottom: 5px var(--border-style) var(--border-color-bottom);
+  border-right: 5px var(--border-style) var(--border-color-right);
+  width: 200px;
+  
+}
+
+.content-wrapper ul{
+  display: flex;
+  flex-direction: column;
+  
+  background-color: rgb(17, 17, 17);
+  align-items: start;
+  justify-content: center;
+
+  overflow-y:auto;
+
+  width: 50%;
+  height: 40%;
+  
+  padding: 10px;
+  border: 5px var(--border-style) var(--border-color-top-left);
+    border-bottom: 5px var(--border-style) var(--border-color-bottom);
+    border-right: 5px var(--border-style) var(--border-color-right);
+}
+
+.content-wrapper ul li{
+  display: flex;
+  list-style: none;
+  background-color: black;
+  margin: 5px;
+width: 100%;
+
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.content-wrapper ul li button{
+  max-width: 20%;
+}

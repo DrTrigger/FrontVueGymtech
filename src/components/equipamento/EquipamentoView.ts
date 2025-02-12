@@ -2,6 +2,8 @@ import { defineComponent, reactive, ref, onMounted } from 'vue';
 import { useEquipamentoStore } from '../../store/EquipamentoStore';
 import type { Equipamento } from '../../models/Equipamento';
 import type { EquipamentoResponse } from '../../models/EquipamentoResponse';
+import type { TipoEquipamento } from '@/models/TipoEquipamento';
+import { listTipoEquipamentos } from '@/services/TipoEquipamentoService';
 
 export default defineComponent({
   name: 'EquipamentoView',
@@ -21,6 +23,7 @@ export default defineComponent({
 
     const isEditing = ref(false);
     const editingId = ref<number | null>(null);
+    const lista_tipos_equipamento = ref<TipoEquipamento[]>([]);
 
     const handleSubmit = async () => {
       if (isEditing.value && editingId.value !== null) {
@@ -67,8 +70,9 @@ export default defineComponent({
       resetForm();
     };
 
-    onMounted(() => {
-      store.fetchEquipamentos();
+    onMounted(async () => {
+      await store.fetchEquipamentos();
+      lista_tipos_equipamento.value = await listTipoEquipamentos();
     });
 
     return {
@@ -79,6 +83,7 @@ export default defineComponent({
       edit,
       remove,
       cancelEdit,
+      lista_tipos_equipamento
     };
   },
 });

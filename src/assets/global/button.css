@@ -1,0 +1,16 @@
+button{
+    color:azure;
+    background-color: rgb(41, 41, 38);
+    /* color: yellow;  */
+    font-weight: 600;
+    border-radius: 25px; 
+    padding: 15px;
+    margin: 10px;
+    width: 80%; 
+}
+
+button:hover{
+    background-color: rgb(16, 17, 17);
+}
+
+

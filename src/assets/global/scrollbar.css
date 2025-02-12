@@ -1,0 +1,13 @@
+::-webkit-scrollbar{/*Modifica a scrollbar geral do elemento*/
+    width: 20px;
+    color: azure;
+}
+
+
+::-webkit-scrollbar-thumb{ /*Modifica o "quadrado que rola" do scroll*/
+    background-color: rgba(0,0,0,0);
+}
+
+::-webkit-scrollbar-thumb:hover{/*Estilo para quando o usuário passa o mouse sobre o "quadrado que rola"*/
+    background-color: rgba(0,0,0,0.8);
+}

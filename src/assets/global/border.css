@@ -1,0 +1,7 @@
+:root{
+    /* Preset de cores de borda (dourado) */
+    --border-color-top-left: #daf470;
+    --border-color-right: #f07c00;
+    --border-color-bottom: #ffe600e0;
+    --border-style: solid;
+}

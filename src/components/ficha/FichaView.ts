@@ -3,8 +3,13 @@ import { defineComponent, reactive, ref, onMounted } from 'vue';
 import { useFichaStore } from '../../store/FichaStore';
 import type { Ficha } from '../../models/Ficha';
 import type { FichaResponse } from '../../models/FichaResponse';
+
+import type { Aluno } from '@/models/Aluno';
+import type { ProfessorResponse } from '@/models/ProfessorResponse';
 // import ExercicioView from '../ExercicioView.vue';
 import { deleteExercicioFicha } from '@/services/ExercicioFichaService';
+import { listAlunos } from '@/services/AlunoService';
+import { listProfessores } from '@/services/ProfessorService';
 
 export default defineComponent({
   name: 'FichaView',
@@ -21,6 +26,8 @@ export default defineComponent({
 
     const isEditing = ref(false);
     const editingId = ref<number | null>(null);
+    const lista_alunos = ref<Aluno[]>([]);
+    const lista_professores = ref<ProfessorResponse[]>([]);
 
     const handleSubmit = async () => {
       if (isEditing.value && editingId.value !== null) {
@@ -58,8 +65,10 @@ export default defineComponent({
       resetForm();
     };
 
-    onMounted(() => {
-      store.fetchFichas();
+    onMounted(async() => {
+      await store.fetchFichas();
+      lista_alunos.value = await listAlunos();
+      lista_professores.value = await listProfessores();
     });
 
     return {
@@ -70,6 +79,8 @@ export default defineComponent({
       edit,
       remove,
       cancelEdit,
+      lista_alunos,
+      lista_professores
     };
   },
 });
