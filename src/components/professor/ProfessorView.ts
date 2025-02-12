@@ -68,8 +68,8 @@ export default defineComponent({
       resetForm();
     };
     
-    onMounted(() => {
-      store.fetchProfessores();
+    onMounted(async () => {
+      await store.fetchProfessores();
     });
     
     return {

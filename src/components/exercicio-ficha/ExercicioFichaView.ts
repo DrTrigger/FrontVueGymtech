@@ -2,6 +2,12 @@ import { defineComponent, reactive, ref, onMounted } from 'vue';
 import { useExercicioFichaStore } from '../../store/ExercicioFichaStore';
 import type { ExercicioFicha } from '../../models/ExercicioFicha';
 import type { ExercicioFichaResponse } from '../../models/ExercicioFichaResponse';
+import { listExercicios } from '@/services/ExercicioService';
+import { listFichas } from '@/services/FichaService';
+import { listEquipamentos } from '@/services/EquipamentoService';
+import type { Exercicio } from '@/models/Exercicio';
+import type { FichaResponse } from '@/models/FichaResponse';
+import type { EquipamentoResponse } from '@/models/EquipamentoResponse';
 
 export default defineComponent({
   name: 'ExercicioFichaView',
@@ -19,7 +25,10 @@ export default defineComponent({
     });
 
     const isEditing = ref(false);
-    const editingId = ref<number | null>(null);
+    const editingId = ref<number | null>(null)
+    const lista_exercicios = ref<Exercicio[]>([]);
+    const lista_fichas = ref<FichaResponse[]>([]);
+    const lista_equipamentos = ref<EquipamentoResponse[]>([]);
 
     const handleSubmit = async () => {
       if (isEditing.value && editingId.value !== null) {
@@ -57,12 +66,16 @@ export default defineComponent({
       editingId.value = null;
     };
 
+
     const cancelEdit = () => {
       resetForm();
     };
 
-    onMounted(() => {
-      store.fetchExerciciosFicha();
+    onMounted(async () => {
+      await store.fetchExerciciosFicha();
+      lista_exercicios.value = await listExercicios();
+      lista_fichas.value = await listFichas();
+      lista_equipamentos.value = await listEquipamentos();
     });
 
     return {
@@ -73,6 +86,9 @@ export default defineComponent({
       edit,
       remove,
       cancelEdit,
+      lista_exercicios,
+      lista_fichas,
+      lista_equipamentos
     };
   },
 });

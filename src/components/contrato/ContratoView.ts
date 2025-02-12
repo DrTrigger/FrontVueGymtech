@@ -2,7 +2,10 @@ import { defineComponent, reactive, ref, onMounted } from 'vue';
 import { useContratoStore } from '../../store/ContratoStore';
 import type { Contrato } from '../../models/Contrato';
 import type { ContratoResponse } from '../../models/ContratoResponse';
-
+import type { Plano } from '@/models/Plano';
+import { listPlanos } from '@/services/PlanoService';
+import type { Aluno } from '@/models/Aluno';
+import { listAlunos } from '@/services/AlunoService';
 export default defineComponent({
   name: 'ContratoView',
   setup() {
@@ -22,6 +25,8 @@ export default defineComponent({
 
     const isEditing = ref(false);
     const editingId = ref<number | null>(null);
+    const lista_planos = ref<Plano[]>([]);
+    const lista_alunos = ref<Aluno[]>([]);
 
     const handleSubmit = async () => {
       if (isEditing.value && editingId.value !== null) {
@@ -69,8 +74,10 @@ export default defineComponent({
       resetForm();
     };
 
-    onMounted(() => {
-      store.fetchContratos();
+    onMounted(async () => {
+      await store.fetchContratos();
+      lista_planos.value = await listPlanos();
+      lista_alunos.value = await listAlunos();
     });
 
     return {
@@ -81,6 +88,8 @@ export default defineComponent({
       edit,
       remove,
       cancelEdit,
+      lista_planos,
+      lista_alunos
     };
   },
 });
